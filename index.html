@@ -248,21 +248,21 @@
           <div class="form-wrapper">
             <h3>Envíanos un mensaje</h3>
             <form class="form-contacto" id="contacto-form" name="contact" method="POST" data-netlify="true"
-              netlify-honeypot="bot-field" action="/gracias.html">
+              netlify-honeypot="bot-field">
               
               <p class="hidden">
                 <label>No rellenes esto: <input name="bot-field" /></label>
               </p>
               <label for="nombre">Nombre *</label>
-              <input type="text" id="nombre" placeholder="Tu nombre" required>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
               <small class="error-text" id="error-nombre"></small>
 
               <label for="email">Correo electrónico *</label>
-              <input type="email" id="email" placeholder="tunombre@email.com" required>
+              <input type="email" id="email" name="email" placeholder="tucorreo@gmail.com" required>
               <small class="error-text" id="error-email"></small>
 
               <label for="mensaje">Mensaje *</label>
-              <textarea id="mensaje" rows="5" placeholder="Escríbenos un mensaje..." required></textarea>
+              <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escríbenos un mensaje..." required></textarea>
               <small class="error-text" id="error-mensaje"></small>
 
               <button type="submit" class="btn-reserva">Enviar Mensaje</button>
