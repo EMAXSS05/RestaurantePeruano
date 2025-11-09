@@ -1,0 +1,679 @@
+/* ======================================= */
+/* MUNAY - COCINA PERUANA: STYLES.CSS FINAL */
+/* ======================================= */
+
+/* -------------------------- */
+/* 1. VARIABLES Y RESET BÁSICO */
+/* -------------------------- */
+:root {
+    /* Paleta de Colores de Munay */
+    --color-principal: #601A1A; /* Vino tinto / Marrón oscuro (Usado en el header/footer) */
+    --color-acento: #D4A760; /* Dorado / Ocre (Para botones y detalles) */
+    --color-fondo-claro: #FAF6E9; /* Crema suave (Fondo principal de las secciones) */
+    --color-texto-oscuro: #333333; /* Texto principal */
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    
+    /* Fuentes */
+    --fuente-titulo: 'Cormorant Garamond', serif;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-texto-oscuro);
+    background-color: var(--color-fondo-claro);
+    line-height: 1.6;
+}
+
+/* Títulos */
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    color: var(--color-principal);
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: var(--color-principal);
+}
+
+/* Secciones generales */
+section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* -------------------------- */
+/* 2. ENCABEZADO Y NAVEGACIÓN */
+/* -------------------------- */
+#encabezado {
+    background-color: var(--color-principal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--color-sombra);
+}
+
+.logo-nombre {
+    display: flex;
+    align-items: center;
+}
+
+.logo-nombre h1 {
+    color: var(--color-fondo-claro);
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.logo {
+    width: 40px; 
+    height: auto;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a:not(.btn-reserva) {
+    color: var(--color-fondo-claro);
+    padding: 10px 15px;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.nav-links li a:hover:not(.btn-reserva) {
+    color: var(--color-acento);
+}
+
+/* BOTÓN PRINCIPAL: Reservar Mesa */
+.btn-reserva, .btn-secundario {
+    background-color: var(--color-acento);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 3px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: var(--fuente-cuerpo);
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-reserva:hover, .btn-secundario:hover {
+    background-color: #C09550;
+    transform: translateY(-2px);
+}
+
+/* -------------------------- */
+/* 3. PORTADA (Hero) */
+/* -------------------------- */
+.portada {
+    padding: 0;
+    position: relative;
+    max-width: 100%;
+}
+
+.imagen-portada {
+    height: 70vh; 
+    overflow: hidden;
+    position: relative;
+}
+
+.imagen-portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.texto-portada {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+.texto-portada h2 {
+    font-size: 4em;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.texto-portada p {
+    font-size: 1.5em;
+    font-family: var(--fuente-titulo);
+}
+
+/* -------------------------- */
+/* 4. SECCIÓN CTA (RESERVA RÁPIDA) */
+/* -------------------------- */
+.seccion-cta {
+    background-color: var(--color-principal);
+    padding: 60px 5%;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 5px solid var(--color-acento);
+}
+
+.seccion-cta h2 {
+    color: var(--color-fondo-claro);
+    margin-bottom: 10px;
+}
+
+.seccion-cta .cta-frase {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    font-family: var(--fuente-titulo);
+}
+
+.btn-grande {
+    padding: 15px 40px;
+    font-size: 1.1em;
+}
+
+/* -------------------------- */
+/* 5. GALERÍA DE IMÁGENES */
+/* -------------------------- */
+.seccion-galeria {
+    background-color: white;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.seccion-galeria .titulo-seccion {
+    margin-bottom: 20px;
+}
+
+.galeria-descripcion {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.03);
+}
+
+/* -------------------------- */
+/* 6. SECCIÓN DE VIDEO */
+/* -------------------------- */
+.video-section {
+    background-color: #f5f5f5;
+    padding: 80px 5%;
+}
+
+.video-section h2 {
+    color: var(--color-principal);
+    margin-bottom: 40px;
+}
+
+.video-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Aplica las dimensiones al video y al iframe */
+.video-contenedor iframe,
+.video-contenedor .video-local { 
+    width: 100%;
+    height: 500px; 
+    display: block;
+    object-fit: cover; 
+}
+
+
+/* -------------------------- */
+/* 7. CARTA (Menú en Grid) */
+/* -------------------------- */
+.seccion-carta {
+    background-color: var(--color-fondo-claro);
+    padding-top: 80px;
+}
+
+.carta-descripcion {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.menu-categoria {
+    margin-bottom: 50px;
+    border-bottom: 2px solid #EEE;
+    padding-bottom: 30px;
+}
+
+.menu-categoria h3 {
+    font-size: 1.8em;
+    text-align: left;
+    color: var(--color-principal);
+    border-bottom: 1px solid var(--color-acento);
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+}
+
+.platos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.plato {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.plato img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.plato .info {
+    flex-grow: 1;
+}
+
+.plato h4 {
+    font-size: 1.2em;
+    margin-bottom: 0;
+    color: var(--color-principal);
+}
+
+.nombre-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.precio {
+    font-family: var(--fuente-cuerpo);
+    font-weight: 600;
+    color: var(--color-acento);
+    font-size: 1.1em;
+}
+
+.plato p {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+/* -------------------------- */
+/* 8. SOBRE NOSOTROS (MOVIDO AL FINAL) */
+/* -------------------------- */
+.seccion-sobre {
+    background-color: white;
+    padding: 80px 5%;
+}
+
+.sobre-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.sobre-imagen img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px var(--color-sombra);
+}
+
+.sobre-texto .subtitulo {
+    font-family: var(--fuente-cuerpo);
+    font-size: 1em;
+    color: var(--color-acento);
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.sobre-texto h2 {
+    text-align: left;
+    font-size: 2.2em;
+    margin-top: 0;
+}
+
+.sobre-texto p {
+    margin-bottom: 15px; 
+}
+
+.sobre-texto a.btn-secundario {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+/* -------------------------- */
+/* 9. CONTACTO (Formulario) */
+/* -------------------------- */
+#contacto {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 80px 5%;
+    text-align: left;
+}
+
+#contacto h2 {
+    color: white;
+    text-align: left;
+    margin-top: 0;
+    font-size: 2.2em;
+}
+
+.contacto-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.info-contacto .subtitulo {
+    display: block;
+    color: var(--color-acento);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.datos-principales p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.info-contacto iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.info-contacto a {
+    color: var(--color-fondo-claro); /* Usa el color crema o blanco para que contraste con el fondo vino */
+    text-decoration: underline; /* Opcional: para que se vea claramente que es un link */
+    transition: color 0.3s;
+}
+.info-contacto a:hover {
+    color: var(--color-acento); /* Color acento al pasar el ratón */
+    text-decoration: none;
+}
+
+/* SOLUCIÓN ALINEACIÓN DEL FORMULARIO */
+.form-wrapper {
+    text-align: left; 
+}
+
+.form-contacto label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-contacto input[type="text"],
+.form-contacto input[type="email"],
+.form-contacto textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--color-texto-oscuro);
+    font-family: var(--fuente-cuerpo);
+    font-size: 1em;
+}
+
+.form-contacto textarea {
+    resize: vertical;
+}
+
+.form-contacto button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* -------------------------- */
+/* 10. PIE DE PÁGINA (Footer) */
+/* -------------------------- */
+#pie {
+    background-color: var(--color-principal);
+    text-align: center;
+    padding: 20px 5%;
+    color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid var(--color-acento);
+    font-size: 0.9em;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-contenido h4 {
+    color: var(--color-acento);
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-family: var(--fuente-cuerpo);
+}
+
+.footer-brand .logo {
+    width: 50px;
+    filter:brightness(2)
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 10px;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-nav a, .footer-info p {
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    padding: 3px 0;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--color-acento);
+}
+
+.footer-copy {
+    padding-top: 15px;
+}
+
+/* -------------------------- */
+/* 11. EFECTOS DE JS Y ERRORES */
+/* -------------------------- */
+
+/* Estilo inicial para elementos que aparecerán (oculto y movido ligeramente) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estado final al ser observados (visible y en posición) */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.galeria-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.galeria-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mensajes de error del formulario */
+.error-text {
+    color: #ff5555;
+    font-size: 0.85em;
+    display: block;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.mensaje-exito {
+    color: #5cb85c;
+    background-color: #dff0d8;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* -------------------------- */
+/* 12. RESPONSIVE COMPLETO */
+/* -------------------------- */
+
+/* Tablet y dispositivos medianos (hasta 1024px) */
+@media (max-width: 1024px) {
+    /* Ajuste de fuentes para reducir tamaño */
+    h2 {
+        font-size: 2em;
+    }
+    
+    /* Contacto y Sobre Nosotros: Columnas en la mayoría de tablets */
+    .sobre-contenido, .contacto-contenedor, .footer-contenido {
+        gap: 25px;
+    }
+}
+
+
+/* Móviles y dispositivos pequeños (hasta 768px) */
+@media (max-width: 768px) {
+    
+    section {
+        padding: 40px 5%; /* Menos padding vertical en móvil */
+    }
+    
+    /* Header (Encabezado) */
+    #encabezado {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5px;
+        position: static; /* No sticky en móviles para ahorrar espacio */
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 5px 0 10px 0;
+    }
+    .nav-links li {
+        margin: 5px 0;
+    }
+    .nav-links li a {
+        display: block;
+    }
+
+    /* Portada (Menos altura) */
+    .imagen-portada {
+        height: 50vh; 
+    }
+    .texto-portada h2 {
+        font-size: 3em;
+    }
+
+    /* Conversión a columna única */
+    .sobre-contenido, 
+    .contacto-contenedor, 
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    /* Footer: Alinear texto a la izquierda en móvil para las listas */
+    .footer-contenido {
+        text-align: left;
+    }
+    
+    /* Carta y Galería */
+    .platos-grid, .galeria-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Video */
+    .video-contenedor iframe, .video-contenedor .video-local {
+        height: 300px;
+    }
+    
+    /* Formulario */
+    .form-contacto h3 {
+        text-align: center;
+    }
+}
