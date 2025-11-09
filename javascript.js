@@ -1,35 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // -----------------------------------------------------------------
-    // 1. EFECTO VISUAL: Aparición de elementos al hacer Scroll (Intersection Observer)
-    // -----------------------------------------------------------------
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // Cuando el elemento es visible
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Dejar de observar una vez que ha aparecido
                 observer.unobserve(entry.target); 
             }
         });
     }, {
-        // Se activa cuando el 10% del elemento está visible
         threshold: 0.1 
     });
 
-    // Observar elementos clave
     const elementosAObservar = document.querySelectorAll('.titulo-seccion, .sobre-contenido, .plato, .info-contacto, .form-wrapper, .galeria-item');
     elementosAObservar.forEach(el => {
-        // Añadir una clase de inicio para animar
         el.classList.add('fade-in'); 
         observer.observe(el);
     });
     
-    // -----------------------------------------------------------------
-    // 2. VALIDACIÓN DEL FORMULARIO DE CONTACTO
-    // -----------------------------------------------------------------
+ 
     const form = document.getElementById('contacto-form');
     
     form.addEventListener('submit', function(event) {
+    
         event.preventDefault(); 
         let isValid = true;
 
@@ -59,15 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
             isValid = false;
         }
 
-        // Si es válido, simular el envío
+        // Si es válido, enviamos el formulario a Netlify
         if (isValid) {
-            // Mostrar mensaje de éxito
+            // Mostrar mensaje de éxito temporal
             const mensajeExito = document.getElementById('mensaje-exito');
-            mensajeExito.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.';
+            mensajeExito.textContent = '¡Mensaje enviado con éxito! Procesando...';
             mensajeExito.style.display = 'block';
             
-            // Limpiar el formulario
-            form.reset();
+            //Re-ejecuta el envío del formulario a Netlify
+            event.target.submit(); 
+            
+            
         }
     });
 });
