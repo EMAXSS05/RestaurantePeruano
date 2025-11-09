@@ -7,12 +7,16 @@
 /* -------------------------- */
 :root {
     /* Paleta de Colores de Munay */
-    --color-principal: #601A1A; /* Vino tinto / Marrón oscuro (Usado en el header/footer) */
-    --color-acento: #D4A760; /* Dorado / Ocre (Para botones y detalles) */
-    --color-fondo-claro: #FAF6E9; /* Crema suave (Fondo principal de las secciones) */
-    --color-texto-oscuro: #333333; /* Texto principal */
+    --color-principal: #601A1A;
+    /* Vino tinto / Marrón oscuro (Usado en el header/footer) */
+    --color-acento: #D4A760;
+    /* Dorado / Ocre (Para botones y detalles) */
+    --color-fondo-claro: #FAF6E9;
+    /* Crema suave (Fondo principal de las secciones) */
+    --color-texto-oscuro: #333333;
+    /* Texto principal */
     --color-sombra: rgba(0, 0, 0, 0.1);
-    
+
     /* Fuentes */
     --fuente-titulo: 'Cormorant Garamond', serif;
     --fuente-cuerpo: 'Montserrat', sans-serif;
@@ -32,7 +36,10 @@ body {
 }
 
 /* Títulos */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--fuente-titulo);
     font-weight: 700;
     color: var(--color-principal);
@@ -43,6 +50,10 @@ h2 {
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 1.5em;
+}
+
+#titulo-munay {
+    font-family: 'Palanquin Dark', sans-serif;
 }
 
 /* Enlaces */
@@ -56,6 +67,10 @@ section {
     padding: 60px 5%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.info-contacto>h2 {
+    text-align: center;
 }
 
 /* -------------------------- */
@@ -86,9 +101,10 @@ section {
 }
 
 .logo {
-    width: 40px; 
+    width: 40px;
     height: auto;
     margin-right: 10px;
+    filter: brightness(2);
 }
 
 .nav-links {
@@ -109,7 +125,8 @@ section {
 }
 
 /* BOTÓN PRINCIPAL: Reservar Mesa */
-.btn-reserva, .btn-secundario {
+.btn-reserva,
+.btn-secundario {
     background-color: var(--color-acento);
     color: white !important;
     padding: 10px 20px;
@@ -122,7 +139,8 @@ section {
     cursor: pointer;
 }
 
-.btn-reserva:hover, .btn-secundario:hover {
+.btn-reserva:hover,
+.btn-secundario:hover {
     background-color: #C09550;
     transform: translateY(-2px);
 }
@@ -137,7 +155,7 @@ section {
 }
 
 .imagen-portada {
-    height: 70vh; 
+    height: 70vh;
     overflow: hidden;
     position: relative;
 }
@@ -263,11 +281,11 @@ section {
 
 /* Aplica las dimensiones al video y al iframe */
 .video-contenedor iframe,
-.video-contenedor .video-local { 
+.video-contenedor .video-local {
     width: 100%;
-    height: 500px; 
+    height: 500px;
     display: block;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 
@@ -398,7 +416,8 @@ section {
 }
 
 .sobre-texto p {
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
+    text-align: justify;
 }
 
 .sobre-texto a.btn-secundario {
@@ -418,7 +437,7 @@ section {
 
 #contacto h2 {
     color: white;
-    text-align: left;
+
     margin-top: 0;
     font-size: 2.2em;
 }
@@ -450,18 +469,22 @@ section {
 }
 
 .info-contacto a {
-    color: var(--color-fondo-claro); /* Usa el color crema o blanco para que contraste con el fondo vino */
-    text-decoration: underline; /* Opcional: para que se vea claramente que es un link */
+    color: var(--color-fondo-claro);
+    /* Usa el color crema o blanco para que contraste con el fondo vino */
+    text-decoration: underline;
+    /* Opcional: para que se vea claramente que es un link */
     transition: color 0.3s;
 }
+
 .info-contacto a:hover {
-    color: var(--color-acento); /* Color acento al pasar el ratón */
+    color: var(--color-acento);
+    /* Color acento al pasar el ratón */
     text-decoration: none;
 }
 
 /* SOLUCIÓN ALINEACIÓN DEL FORMULARIO */
 .form-wrapper {
-    text-align: left; 
+    text-align: left;
 }
 
 .form-contacto label {
@@ -522,7 +545,7 @@ section {
 
 .footer-brand .logo {
     width: 50px;
-    filter:brightness(2)
+    filter: brightness(2);
 }
 
 .footer-brand p {
@@ -534,7 +557,8 @@ section {
     list-style: none;
 }
 
-.footer-nav a, .footer-info p {
+.footer-nav a,
+.footer-info p {
     color: rgba(255, 255, 255, 0.7);
     display: block;
     padding: 3px 0;
@@ -595,19 +619,31 @@ section {
     text-align: center;
 }
 
-/* -------------------------- */
+.hidden {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+
 /* 12. RESPONSIVE COMPLETO */
-/* -------------------------- */
+
 
 /* Tablet y dispositivos medianos (hasta 1024px) */
 @media (max-width: 1024px) {
+
     /* Ajuste de fuentes para reducir tamaño */
     h2 {
         font-size: 2em;
     }
-    
+
     /* Contacto y Sobre Nosotros: Columnas en la mayoría de tablets */
-    .sobre-contenido, .contacto-contenedor, .footer-contenido {
+    .sobre-contenido,
+    .contacto-contenedor,
+    .footer-contenido {
         gap: 25px;
     }
 }
@@ -615,65 +651,75 @@ section {
 
 /* Móviles y dispositivos pequeños (hasta 768px) */
 @media (max-width: 768px) {
-    
+
     section {
-        padding: 40px 5%; /* Menos padding vertical en móvil */
+        padding: 40px 5%;
+        /* Menos padding vertical en móvil */
     }
-    
+
     /* Header (Encabezado) */
     #encabezado {
         flex-direction: column;
         align-items: center;
         padding-bottom: 5px;
-        position: static; /* No sticky en móviles para ahorrar espacio */
+        position: static;
     }
+
     .nav-links {
         flex-direction: column;
         width: 100%;
         text-align: center;
         padding: 5px 0 10px 0;
     }
+
     .nav-links li {
         margin: 5px 0;
     }
+
     .nav-links li a {
         display: block;
     }
 
     /* Portada (Menos altura) */
     .imagen-portada {
-        height: 50vh; 
+        height: 50vh;
     }
+
     .texto-portada h2 {
         font-size: 3em;
     }
 
     /* Conversión a columna única */
-    .sobre-contenido, 
-    .contacto-contenedor, 
+    .sobre-contenido,
+    .contacto-contenedor,
     .footer-contenido {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     /* Footer: Alinear texto a la izquierda en móvil para las listas */
     .footer-contenido {
         text-align: left;
     }
-    
+
     /* Carta y Galería */
-    .platos-grid, .galeria-grid {
+    .platos-grid,
+    .galeria-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     /* Video */
-    .video-contenedor iframe, .video-contenedor .video-local {
+    .video-contenedor iframe,
+    .video-contenedor .video-local {
         height: 300px;
     }
-    
+
     /* Formulario */
     .form-contacto h3 {
         text-align: center;
     }
+
+    /*Para ocultar el campo hidden*/
+
 }
