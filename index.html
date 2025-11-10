@@ -9,7 +9,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Montserrat:wght@400;600&family=Palanquin+Dark:wght@700&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -32,14 +32,26 @@
 
   <main>
     <section id="inicio" class="portada">
-      <div class="imagen-portada">
-        <img src="./img/ceviche-Portada.png" alt="Plato de ceviche peruano tradicional con maíz y camote">
-        <div class="texto-portada">
-          <h2 id="titulo-munay">Munay</h2>
-          <p>Cocina peruana hecha con amor</p>
+    <div class="portada-contenido">
+        <div class="intro-texto">
+            <p class="subtitulo">Sabor que Conquista</p>
+            <h2>Experimenta la Auténtica Cocina Peruana</h2>
+            <p class="descripcion">
+                En Munay, cada plato es una celebración de nuestra herencia, con ingredientes frescos y el amor que define nuestra cultura.
+                ¡Una experiencia culinaria que no olvidarás!
+            </p>
+            <div class="intro-botones">
+                <a href="#carta" class="btn-principal">EXPLORAR CARTA</a>
+                <a href="#contacto" class="btn-secundario-outline">RESERVAR MESA</a>
+            </div>
         </div>
-      </div>
-    </section>
+        <div class="intro-imagen">
+            <img src="./img/ceviche-clasic.png" alt="Ceviche Clásico Peruano"> 
+        </div>
+    </div>
+    <div class="decoracion-lima"></div> 
+    <div class="decoracion-aji"></div>
+</section>
 
     <section id="cta-reserva" class="seccion-cta">
       <h2 class="titulo-seccion">El Sabor de Perú Te Espera.</h2>
@@ -70,6 +82,8 @@
           <img src="./img/mazamorraMorada2.webp" alt="Mazamorra">
         </div>
       </div>
+    </section>
+
 
 
       <section id="video-experiencia" class="video-section">
@@ -82,6 +96,21 @@
         </div>
       </section>
 
+      <section class="seccion-condor">
+    <div class="condor-contenido">
+        <div class="condor-imagen">
+            <img src="./img/condor-Andino.jpg" alt="Símbolo del Cóndor Andino Munay"> 
+        </div>
+        <div class="condor-texto">
+            <span class="subtitulo">NUESTRO SÍMBOLO</span>
+            <h2>El Cóndor: El Espíritu que Nos Eleva</h2>
+            <p>El cóndor andino, majestuoso símbolo de los Andes, representa en Munay la búsqueda de la **excelencia y la conexión profunda** con nuestra herencia cultural. Al igual que el cóndor que observa desde las alturas, aspiramos a una visión elevada de la gastronomía, fusionando la tradición con la innovación.</p>
+            <p>Cada plato es un vuelo a través de las regiones, honrando la historia y la pasión de nuestra tierra. El cóndor es la promesa de un viaje culinario inigualable.</p>
+        </div>
+    </div>
+      </section>
+</section>
+
       <section id="carta" class="seccion-carta">
         <h2 class="titulo-seccion">Nuestra Carta</h2>
         <p class="carta-descripcion">Tradición y modernidad en cada bocado, seleccionados desde el corazón de la cocina
@@ -92,7 +121,7 @@
           <div class="platos-grid">
 
             <div class="plato plato-principal">
-              <img src="./img/ceviche-clasic.png" alt="Ceviche clásico peruano">
+              <img src="./img/menu/ceviche-clasic.png" alt="Ceviche clásico peruano">
               <div class="info">
                 <div class="nombre-precio">
                   <h4>Ceviche Clásico</h4>
@@ -104,7 +133,7 @@
             </div>
 
             <div class="plato plato-principal">
-              <img src="./img/cevichePota.jpg" alt="Ceviche de pota">
+              <img src="./img/menu/cevichePota.jpg" alt="Ceviche de pota">
               <div class="info">
                 <div class="nombre-precio">
                   <h4>Ceviche de Pota</h4>
@@ -116,7 +145,7 @@
             </div>
 
             <div class="plato plato-principal">
-              <img src="./img/cevicheMixto.webp" alt="Ceviche mixto">
+              <img src="./img/menu/cevicheMixto.webp" alt="Ceviche mixto">
               <div class="info">
                 <div class="nombre-precio">
                   <h4>Ceviche Mixto</h4>
@@ -134,7 +163,7 @@
           <div class="platos-grid">
 
             <div class="plato">
-              <img src="./img/anticuchos.jpg" alt="Anticuchos de corazón">
+              <img src="./img/menu/anticuchos.jpg" alt="Anticuchos de corazón">
               <div class="info">
                 <div class="nombre-precio">
                   <h4>Anticuchos de Corazón</h4>
@@ -146,7 +175,7 @@
             </div>
 
             <div class="plato">
-              <img src="./img/papas-a-la-huancaina-ajustada-web.jpg" alt="Papas a la Huancaína">
+              <img src="./img/menu/papas-a-la-huancaina-ajustada-web.jpg" alt="Papas a la Huancaína">
               <div class="info">
                 <div class="nombre-precio">
                   <h4>Papas a la Huancaína</h4>
@@ -157,7 +186,7 @@
             </div>
 
             <div class="plato">
-              <img src="./img/yuca-frita.jpg" alt="yucas fritas">
+              <img src="./img/menu/yuca-frita.jpg" alt="yucas fritas">
               <div class="info">
                 <div class="nombre-precio">
                   <h4>Yucas Fritas con Palta</h4>
@@ -175,7 +204,7 @@
           <div class="platos-grid">
 
             <div class="plato">
-              <img src="./img/suspiros-limeño.png" alt="Suspiro a la Limeña">
+              <img src="./img/menu/suspiros-limeño.png" alt="Suspiro a la Limeña">
               <div class="info">
                 <div class="nombre-precio">
                   <h4>Suspiro a la Limeña</h4>
@@ -186,7 +215,7 @@
             </div>
 
             <div class="plato">
-              <img src="./img/mazamorraMorada.jpeg" alt="Mazamorra morada peruana">
+              <img src="./img/menu/mazamorraMorada.jpeg" alt="Mazamorra morada peruana">
               <div class="info">
                 <div class="nombre-precio">
                   <h4>Mazamorra Morada</h4>
@@ -204,25 +233,17 @@
         <div class="sobre-contenido">
 
           <div class="sobre-imagen">
-            <img src="./img/Plaza-mayor-lima-peru.jpg" alt="Vista de la Plaza Mayor de Lima, Perú">
+           <img src="./img/chef-preparandoCeviche-conocenos.jpg" alt="Chef principal de Munay preparando el ceviche del día">
           </div>
 
           <div class="sobre-texto">
             <span class="subtitulo">Nuestra Esencia</span>
             <h2 class="titulo-seccion">El Sabor que Nace del Amor (Munay)</h2>
-            <p>
-              En <strong>Munay</strong>, rendimos homenaje a la gastronomía peruana con una propuesta que combina
-              tradición y modernidad.
-              Nacimos con el propósito de compartir la riqueza de nuestras regiones — desde la costa hasta los Andes y
-              la selva —
-              en un solo lugar, donde cada plato cuenta una historia.
-            </p>
-            <p>
-              Nuestro equipo está conformado por cocineros apasionados, comprometidos con el uso de ingredientes
-              frescos,
-              sostenibles y locales. Creemos en el poder de la comida para unir culturas, despertar emociones y crear
-              recuerdos.
-            </p>
+           <p>
+    En **Munay**, rendimos homenaje a la **tradición culinaria de la Costa Peruana**, elevando el arte del ceviche a una experiencia moderna. Nacimos con el propósito de compartir la **frescura del Pacífico** y la maestría de nuestra herencia marina, donde cada bocado de pescado fresco cuenta una historia de sabor puro.
+    <br><br>
+    Nuestro equipo está conformado por cocineros apasionados, comprometidos con el uso exclusivo de **ingredientes frescos, sostenibles y locales** provenientes del litoral. Creemos en el poder del limón, el ají y el pescado del día para despertar emociones y crear recuerdos inolvidables en tu mesa.
+</p>
             <a href="#carta" class="btn-secundario">Explora el Menú</a>
           </div>
         </div>
@@ -250,7 +271,7 @@
             <h3>Envíanos un mensaje</h3>
             <form class="form-contacto" id="contacto-form" name="contact" method="POST" data-netlify="true"
               netlify-honeypot="bot-field">
-              
+
               <p class="hidden">
                 <label>No rellenes esto: <input name="bot-field" /></label>
               </p>
@@ -304,12 +325,12 @@
           <a href="URL-LINKEDIN" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
-      
+
     </div>
     <div class="footer-copy">
       <p>© 2025 Munay | Desarrollado por Emanuel Abner Rodriguez Baltazar</p>
     </div>
-</footer>
+  </footer>
 
   <script src="javascript.js"></script>
 </body>
