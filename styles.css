@@ -428,12 +428,52 @@ section {
 
 .plato {
     display: flex;
-    gap: 15px;
+    gap: 14px;
     align-items: flex-start;
     padding: 15px;
     background: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+.plato-iconos {
+    position: absolute; /* Posicionamiento absoluto dentro del .plato */
+    bottom: 2px; /* Ajusta la distancia desde abajo */
+    right: 15px; /* Ajusta la distancia desde la derecha */
+    display: flex; /* Para alinear múltiples iconos si los hubiera */
+    gap: 8px; /* Espacio entre iconos si hay varios */
+    z-index: 1; /* Asegura que esté por encima de otros elementos si se solapan */
+}
+
+.plato-iconos i {
+    background-color: #3f51b5; /* Fondo azul oscuro, similar al de tu ejemplo */
+    color: white; /* Color del icono */
+    border-radius: 50%; /* Hacerlo circular */
+    width: 30px; /* Tamaño del círculo */
+    height: 30px; /* Tamaño del círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em; /* Tamaño del icono dentro del círculo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    /* Efecto al pasar el ratón */
+}
+
+
+
+/* Opcional: Colores específicos para tipos de alérgenos */
+/* Puedes definir clases adicionales si quieres diferentes colores para gluten, lácteos, etc. */
+.plato-iconos .fa-fish {
+    background-color: #1A5276; /* Azul más específico para pescado */
+}
+
+.plato-iconos .fa-cheese { /* Ejemplo para lácteos si lo incluyes */
+    background-color: #FFD700; /* Dorado para lácteos */
+    color: var(--color-principal); /* Texto oscuro para contraste */
+}
+
+.plato-iconos .fa-wheat-awn { /* Ejemplo para gluten */
+    background-color: #8B4513; /* Marrón para gluten */
 }
 
 .plato img {
