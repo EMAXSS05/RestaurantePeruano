@@ -428,13 +428,15 @@ section {
 
 .plato {
     display: flex;
-    gap: 14px;
+    gap: 15px;
     align-items: flex-start;
     padding: 15px;
     background: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    position: relative;
+    position: relative; /* Muy importante para que la imagen absoluta se posicione con respecto a la tarjeta del plato */
+    overflow: visible; /* IMPORTANTE: Permite que los elementos se desborden de la tarjeta */
+    z-index: 0; /* Asegura que una tarjeta no tape a la otra por defecto */
 }
 .plato-iconos {
     position: absolute; /* Posicionamiento absoluto dentro del .plato */
@@ -446,8 +448,11 @@ section {
 }
 
 .plato-iconos i {
-    background-color: #3f51b5; /* Fondo azul oscuro, similar al de tu ejemplo */
-    color: white; /* Color del icono */
+   /* 🛠️ CAMBIO DE COLOR DE FONDO: Usamos tu color de acento (Marrón Oscuro) */
+    background-color: var(--color-principal); /* Utiliza el color marrón de tu encabezado y footer */
+    
+    /* 🛠️ CAMBIO DE COLOR DEL ÍCONO: Usamos el color claro/crema de tu texto y fondo */
+    color: #fcebe4; /* Usamos un color crema claro que contraste con el marrón */ /* Color del icono */
     border-radius: 50%; /* Hacerlo circular */
     width: 30px; /* Tamaño del círculo */
     height: 30px; /* Tamaño del círculo */
@@ -463,14 +468,7 @@ section {
 
 /* Opcional: Colores específicos para tipos de alérgenos */
 /* Puedes definir clases adicionales si quieres diferentes colores para gluten, lácteos, etc. */
-.plato-iconos .fa-fish {
-    background-color: #1A5276; /* Azul más específico para pescado */
-}
 
-.plato-iconos .fa-cheese { /* Ejemplo para lácteos si lo incluyes */
-    background-color: #FFD700; /* Dorado para lácteos */
-    color: var(--color-principal); /* Texto oscuro para contraste */
-}
 
 .plato-iconos .fa-wheat-awn { /* Ejemplo para gluten */
     background-color: #8B4513; /* Marrón para gluten */
@@ -482,8 +480,23 @@ section {
     object-fit: cover;
     border-radius: 50%;
     flex-shrink: 0;
+    transition: transform 0.3s ease-in-out;
 }
-
+.plato:hover {
+    z-index: 10; /* Eleva la tarjeta completa al hacer hover para que la imagen agrandada no sea tapada por otras tarjetas */
+}
+.plato img:hover {
+    position: absolute; /* Esto es la clave: la saca del flujo normal */
+    top: -20px; /* Ajusta la posición vertical para que "flote" por encima */
+    left: -20px; /* Ajusta la posición horizontal */
+    width: 180px; /* Nuevo ancho para que se vea grande */
+    height: 180px; /* Nueva altura */
+    border-radius: 5px; /* La hacemos cuadrada o un poco redondeada al agrandar */
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra para efecto flotante */
+    transform: scale(1.0); /* Mantenemos el scale en 1, el tamaño lo da width/height */
+    z-index: 20; /* Asegura que la imagen esté por encima de todo */
+}
 .plato .info {
     flex-grow: 1;
 }
@@ -703,6 +716,28 @@ section {
 .form-contacto button[type="submit"] {
     width: 100%;
     margin-top: 20px;
+}
+.campos-reserva {
+    display: flex;
+    gap: 10px; /* Espacio entre los 3 campos pequeños */
+    margin-bottom: 20px; /* Espacio antes del campo Mensaje */
+}
+
+.campos-reserva > div {
+    flex-basis: 33.33%; /* Distribuye el espacio equitativamente */
+    flex-grow: 1; /* Permite que crezcan para llenar el espacio */
+}
+
+/* Estilos de los inputs de Fecha, Hora, Número para que se vean bien */
+.campos-reserva input {
+    /* Hereda los estilos de los inputs generales, si los tienes definidos */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Usa un borde más claro para contraste en fondo oscuro */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente oscuro */
+    color: white; /* Texto blanco en inputs */
+    border-radius: 4px;
+    box-sizing: border-box; /* Crucial para que el padding no rompa el 100% de ancho */
 }
 
 /* -------------------------- */
@@ -991,6 +1026,10 @@ section {
     /* Formulario */
     .form-contacto h3 {
         text-align: center;
+    }
+    .campos-reserva {
+        flex-direction: column;
+        gap: 20px;
     }
 
     .footer-social {

@@ -149,8 +149,9 @@
               </div>
               <p>Anillos de pota tiernos y marinados en la tradicional leche de tigre, servidos con cancha chulpi y
                 camote glaseado.</p>
-                 <div class="plato-iconos">
+              <div class="plato-iconos">
                 <i class="fas fa-fish" title="Contiene Pescado/Marisco"></i>
+                <i class="fas fa-shrimp" title="Contiene Mariscos/moluscos"></i>
               </div>
             </div>
           </div>
@@ -164,8 +165,9 @@
               </div>
               <p>Combinación de pescado fresco, calamar, langostinos y conchas, bañado en nuestra leche de tigre
                 especial de ají limo.</p>
-                 <div class="plato-iconos">
+              <div class="plato-iconos">
                 <i class="fas fa-fish" title="Contiene Pescado/Marisco"></i>
+                <i class="fas fa-shrimp" title="Contiene Mariscos/moluscos"></i>
               </div>
             </div>
           </div>
@@ -196,6 +198,10 @@
                 <span class="precio">S/ 22.00</span>
               </div>
               <p>Papas amarillas bañadas en una suave salsa de queso fresco, ají amarillo y leche evaporada.</p>
+              <div class="plato-iconos">
+                <i class="fas fa-egg" title="Contiene huevos"></i>
+                 <i class="fas fa-cheese" title="Contiene lácteos"></i>
+              </div>
             </div>
           </div>
 
@@ -225,6 +231,10 @@
                 <span class="precio">S/ 18.00</span>
               </div>
               <p>Delicioso manjar blanco con merengue italiano al oporto. Dulce, cremoso y tradicional.</p>
+              <div class="plato-iconos">
+                <i class="fas fa-egg" title="Contiene huevos"></i>
+
+              </div>
             </div>
           </div>
 
@@ -301,6 +311,25 @@
             <label for="email">Correo electrónico *</label>
             <input type="email" id="email" name="email" placeholder="tucorreo@gmail.com" required>
             <small class="error-text" id="error-email"></small>
+
+            <div class="campos-reserva">
+              <div class="campo-fecha">
+                <label for="fecha">Fecha *</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <small class="error-text" id="error-fecha"></small>
+              </div>
+              <div class="campo-hora">
+                <label for="hora">Hora *</label>
+                <input type="time" id="hora" name="hora" required>
+                <small class="error-text" id="error-hora"></small>
+              </div>
+              <div class="campo-personas">
+                <label for="personas">Personas *</label>
+                <input type="number" id="personas" name="personas" min="1" max="10" placeholder="1" required>
+                <small class="error-text" id="error-personas"></small>
+              </div>
+            </div>
+
 
             <label for="mensaje">Mensaje *</label>
             <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escríbenos un mensaje..." required></textarea>
